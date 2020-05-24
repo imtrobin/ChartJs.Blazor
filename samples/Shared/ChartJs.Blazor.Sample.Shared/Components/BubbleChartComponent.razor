@@ -6,11 +6,16 @@
 <div class="row">
     <button class="btn btn-primary" @onclick="OnClick">Add Dataset</button>
 </div>
-<ChartJsBubbleChart @ref="_bubbleChartJs" Config="@_config" Width="600" Height="300" />
+
+<Chart @ref="_bubbleChartJs"
+        Config="@_config"
+        TConfig="BubbleConfig"
+        Width="600"
+        Height="300"/>
 
 @code {
     private BubbleConfig _config;
-    private ChartJsBubbleChart _bubbleChartJs;
+    private Chart<BubbleConfig> _bubbleChartJs;
 
     private Random _rand = new Random();
 
